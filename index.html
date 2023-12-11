@@ -2,177 +2,184 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FORMULARIO</title>
+    <meta name="viewport" content="">
     <link rel="stylesheet" href="css/estilos.css">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: url(../img/fondo3.jpg);
-        background-size: cover;
-        background-attachment: fixed;
-        margin: 0;
-        font-family: sans-serif;
-      }
-
-      .contenedor {
-        background: rgba(255, 69, 58, 0.5);
-        width: 95%;
-        max-width: 750px;
-        margin: auto;
-        padding: 25px 30px;
-        margin-top: 50px;
-        padding-bottom: 30px;
-        border-radius: 3px;
-      }
-
-      .form-header .form-title {
-        font-weight: normal;
-        color: #07b9ff;
-        text-align: center;
-        padding: 15px 0;
-      }
-
-      .form-header .form-title span {
-        color: #fff;
-      }
-
-      .form-label {
-        display: block;
-        color: #07b9ff;
-        font-size: 28px;
-        position: relative;
-        margin-top: 15px;
-      }
-
-      .form-input,
-      .form-textarea {
-        background: rgba(255, 255, 255, 0.5);
-        border: none;
-        outline: none;
-        border-bottom: 4px solid #34bbe9;
-        width: 100%;
-        padding: 13px;
-        margin-bottom: 20px;
-        border-radius: 2px;
-        font-size: 18px;
-        color: #fff;
-      }
-
-      .form-textarea {
-        resize: vertical;
-        max-height: 150px;
-        min-height: 50px;
-      }
-
-      .btn-submit {
-        width: 24%;
-        font-family: sans-serif;
-        outline: none;
-        background: #07b9ff;
-        font-size: 15px;
-        border: none;
-        color: #fff;
-        padding: 16px 0;
-        cursor: pointer;
-        display: block;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
   </head>
   <body>
+    <style>
+      *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+  
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contenedor .form .form-header .form-title{
+  font-weight: normal;
+  font-family: sans-serif;
+  color:#07b9ff ;
+  text-align: center;
+  padding: 15px 0;
+
+}
+
+.contenedor .form .form-header .form-title span{
+  color:#ffff;
+}
+
+.contenedor {
+  background: rgba(255, 69, 58, 0.5);
+  width: 95%;
+  max-width: 750px;
+  margin: auto;
+  padding: 25px 90px;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+}
+
+.contenedor .form .form-label{
+  display: block;
+  color:#07b9ff ;
+  font-size: 28px;
+  font-family: sans-serif;
+  position: relative;
+}
+
+
+.contenedor .form .form-input, .form.textarea{
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  border-bottom: 4px solid #34bbe9;
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  font-size: 18px;
+  color: #fff;
+  font-family: sans-serif;
+
+}
+
+.contenedor .form .form.textarea{
+  resize: vertical;
+  max-height: 150px;
+  min-height: 50px;
+}
+
+.contenedor .form .btn-submit{
+  position: center;
+  width: 24%;
+  font-family: sans-serif;
+  outline: none;
+  background: #07b9ff;
+  font-size: 15px;
+  border: none;
+  color: #fff;
+  padding: 16px 0;
+  cursor: pointer;
+
+}
+
+    </style>
     <div class="contenedor">
       <form action="" class="form">
         <div class="form-header">
           <h1 class="form-title">REGISTROOOOOOO</h1>
-        </div>
 
+        </div>
         <label for="producto" class="form-label">PRODUCTO</label>
-        <input type="text" id="producto" class="form-input" placeholder="Ingrese el nombre del producto">
+        <input type="text" id= 'producto' class="form-input" placeholder="Ingrese el nombre del productooooooo">
 
         <label for="marca" class="form-label">MARCA</label>
-        <input type="text" id="marca" class="form-input" placeholder="Ingrese la marca del producto">
+        <input type="text" id= 'marca' class="form-input" placeholder="Ingrese la marca del producto">
 
         <label for="tipo" class="form-label">TIPO</label>
-        <input type="text" id="tipo" class="form-input" placeholder="Ingrese el tipo de producto">
+        <input type="text" id= 'tipo' class="form-input" placeholder="Ingrese el tipo de producto">
 
         <label for="tono" class="form-label">TONO</label>
-        <input type="text" id="tono" class="form-input" placeholder="Ingrese el tono del producto">
+        <input type="text" id= 'tono' class="form-input" placeholder="Ingrese el tono del producto">
 
         <label for="precio" class="form-label">PRECIO</label>
-        <input type="text" id="precio" class="form-input" placeholder="Ingrese el precio del producto">
+        <input type="text" id= 'precio' class="form-input" placeholder="Ingrese el precio del producto">
 
         <label for="lanzamiento" class="form-label">FECHA DE LANZAMIENTO</label>
-        <input type="text" id="lanzamiento" class="form-input" placeholder="Ingrese la fecha de lanzamiento">
+        <input type="text" id= 'lanzamiento' class="form-input" placeholder="Ingrese la fecha de lanzamiento">
 
-        <input type="button" class="btn-submit" onclick="crearRegistro()" value="GUARDAR">
-        <input type="button" class="btn-submit" onclick="leerRegistro()" value="VER">
-        <input type="button" class="btn-submit" value="MODIFICAR">
-        <input type="button" class="btn-submit" value="ELIMINAR">
+
+
+
+
+        <input type="submit" class="btn-submit" onclick="crearRegistro()" value="GUARDAR">
+        <input type="submit" class="btn-submit" onclick="crearRegistro()" value="VER">
+        <input type="submit" class="btn-submit" value="MODIFICAR">
+        <input type="submit" class="btn-submit" value="ELIMINAR">
       </form>
 
       <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-        import { push, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
-
+      
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-          apiKey: "your-api-key",
-          authDomain: "your-auth-domain",
-          databaseURL: "your-database-url",
-          projectId: "your-project-id",
-          storageBucket: "your-storage-bucket",
-          messagingSenderId: "your-messaging-sender-id",
-          appId: "your-app-id",
-          measurementId: "your-measurement-id"
+          apiKey: "AIzaSyBFfw2LSZ21xAvjH3TLLfAe0QP0CRGIsu8",
+          authDomain: "proyecto-angeless.firebaseapp.com",
+          databaseURL: "https://proyecto-angeless-default-rtdb.firebaseio.com",
+          projectId: "proyecto-angeless",
+          storageBucket: "proyecto-angeless.appspot.com",
+          messagingSenderId: "283761928202",
+          appId: "1:283761928202:web:7e7df2418c19aa94e1d7f3",
+          measurementId: "G-717M6LB7E6"
         };
-
+      
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
 
         window.crearRegistro = function () {
-          const producto = document.getElementById("producto").value;
-          const marca = document.getElementById("marca").value;
-          const tipo = document.getElementById("tipo").value;
-          const tono = document.getElementById("tono").value;
-          const precio = document.getElementById("precio").value;
-          const lanzamiento = document.getElementById("lanzamiento").value;
-          console.log(producto, marca, tipo, tono, precio, lanzamiento);
-          push(
-            ref(app.database(), 'registro de productos'),
-            {
-              producto: producto,
-              marca: marca,
-              tipo: tipo,
-              tono: tono,
-              precio: precio,
-              lanzamiento: lanzamiento
+                const producto = document.getElementById("producto").value;
+                const marca = document.getElementById("marca").value;
+                const tipo = document.getElementById("tipo").value;
+                const tono = document.getElementById("tono").value;
+                const precio = document.getElementById("precio").value;
+                const lanzamiento = document.getElementById("lanzamiento").value;
+                console.log(producto, marca, tipo, tono, precio, lanzamiento);
+                push(
+                    ref(database, 'registro de productos'),
+                    {
+                        producto:producto,
+                        marca:marca,
+                        tipo:tipo,
+                        tono:tono,
+                        precio:precio,
+                        lanzamiento:lanzamiento
+                    }
+                );
             }
-          );
+
+            window.leerRegistro = function () {
+            const databaseRef = ref(database, 'registro de productos');
+            onValue(databaseRef, (snapshot) => {
+                const data = snapshot.val();
+                console.log("Registros:", data);
+            });
         }
 
-        window.leerRegistro = function () {
-          const databaseRef = ref(app.database(), 'registro de productos');
-          onValue(databaseRef, (snapshot) => {
-            const data = snapshot.val();
-            console.log("Registros:", data);
-          });
-        }
       </script>
+
     </div>
+
   </body>
 </html>
