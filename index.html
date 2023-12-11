@@ -119,7 +119,7 @@ body{
 
 
         <input type="submit" class="btn-submit" onclick="crearRegistro()" value="GUARDAR">
-        <input type="submit" class="btn-submit" onclick="crearRegistro()" value="VER">
+        <input type="submit" class="btn-submit" value="VER">
         <input type="submit" class="btn-submit" value="MODIFICAR">
         <input type="submit" class="btn-submit" value="ELIMINAR">
       </form>
@@ -157,7 +157,7 @@ body{
                 const lanzamiento = document.getElementById("lanzamiento").value;
                 console.log(producto, marca, tipo, tono, precio, lanzamiento);
                 push(
-                    ref(database, 'registro de productos'),
+                    ref(database, 'registro'),
                     {
                         producto:producto,
                         marca:marca,
@@ -170,7 +170,7 @@ body{
             }
 
             window.leerRegistro = function () {
-            const databaseRef = ref(database, 'registro de productos');
+            const databaseRef = ref(database, 'registro');
             onValue(databaseRef, (snapshot) => {
                 const data = snapshot.val();
                 console.log("Registros:", data);
