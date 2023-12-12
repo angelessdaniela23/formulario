@@ -64,6 +64,7 @@
 
         button:hover {
             background-color: #000000;
+            position: center;
             
         }
 
@@ -151,8 +152,8 @@
                     <th>ID</th>
                     <th>PRODUCTO</th>
                     <th>MARCA</th>
+                    <th>PRECIO</th>
                     <th>TIPO</th>
-                    <th>TONO</th>
                     <th>CANTIDAD</th>
                 </tr>
             </thead>
@@ -195,19 +196,19 @@
             const telefono = document.getElementById("telefono").value;
             console.log(nombre, apellido, edad, direccion, telefono);
             push(
-                ref(database, 'brandongordon'),
+                ref(database, 'angeles_garcia'),
                 {
-                    prod: nombre,
-                    marca: apellido,
-                    precio: edad,
-                    tip: direccion,
-                    cantidad: telefono
+                    name: nombre,
+                    lastname: apellido,
+                    age: edad,
+                    address: direccion,
+                    telephone: telefono
                 }
             );
         }
 
         window.leerRegistro = function () {
-            const databaseRef = ref(database, 'brandongordon');
+            const databaseRef = ref(database, 'angeles_garcia');
             const tablaRegistros = document.getElementById('tablaRegistros');
             const tbody = tablaRegistros.querySelector('tbody');
 
