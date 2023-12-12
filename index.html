@@ -188,20 +188,20 @@
         const database = getDatabase(app);
 
         window.crearRegistro = function () {
-            const producto = document.getElementById("producto").value;
-            const marca = document.getElementById("marca").value;
-            const precio = document.getElementById("precio").value;
-            const tipo = document.getElementById("tipo").value;
-            const cantidad = document.getElementById("cantidad").value;
-            console.log(producto, marca, precio, tipo, cantidad);
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            const edad = document.getElementById("edad").value;
+            const direccion = document.getElementById("direccion").value;
+            const telefono = document.getElementById("telefono").value;
+            console.log(nombre, apellido, edad, direccion, telefono);
             push(
                 ref(database, 'brandongordon'),
                 {
-                    producto: producto,
-                    marca: marca,
-                    precio: precio,
-                    tipo: tipo,
-                    cantidad: cantidad
+                    name: nombre,
+                    lastname: apellido,
+                    age: edad,
+                    address: direccion,
+                    telephone: telefono
                 }
             );
         }
