@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -50,6 +50,7 @@
         }
 
         button {
+            position: center;
             width: 15%;
             font-family: sans-serif;
             outline: none;
@@ -63,6 +64,8 @@
 
         button:hover {
             background-color: #000000;
+            align-items: center;
+            
         }
 
         #tablaRegistros {
@@ -108,18 +111,39 @@
         <h2>REGISTRO DE PRODUCTOS</h2>
 
         <form id="crud-form">
-            <label for="producto">PRODUCTO:</label>
-            <input type="text" id="producto" placeholder="Ingrese el nombre del producto">
-            <label for="marca">MARCA:</label>
-            <input type="text" id="marca" placeholder="Ingrese la marca">
-            <label for="precio">PRECIO:</label>
-            <input type="number" id="precio" placeholder="Ingrese el precio">
-            <label for="tipo">TIPO:</label>
-            <input type="text" id="tipo" placeholder="Ingrese el tipo">
-            <label for="cantidad">CANTIDAD:</label>
-            <input type="number" id="cantidad" placeholder="Ingrese la cantidad">
-            <button type="submit" onclick="crearRegistro()">AÑADIR</button>
+            <label for="idOpciones">ID PRODUCTO:</label>
+            <input type="text" id="idOpciones" placeholder="ID autogenerado" >
+            <label for="nombre">PRODUCTO:</label>
+            <input type="text" id="nombre" placeholder="Ingrese el nombre del producto">
+            <label for="apellido">MARCA:</label>
+            <input type="text" id="apellido" placeholder="Ingrese la marca">
+            <label for="edad">PRECIO:</label>
+            <input type="number" id="edad" placeholder="Ingrese el precio">
+            <label for="direccion">TIPO:</label>
+            <input type="text" id="direccion" placeholder="Ingrese el tipo">
+            <label for="telefono">CANTIDAD:</label>
+            <input type="number" id="telefono" placeholder="Ingrese la cantidad">
         </form>
+
+        <!-- Tabla para mostrar los registros -->
+        <table id="tabla" align="center">
+            <thead>
+                <tr>
+                    <th>
+                        <button type="button" onclick="crearRegistro()">AÑADIR</button>
+                    </th>
+                    <th>
+                        <button type="button" onclick="leerRegistro()">VIZUALIZAR</button>
+                    </th>
+                    <th>
+                        <button type="button" onclick="actualizarRegistro()">MODIFICAR</button>
+                    </th>
+                    <th>
+                        <button type="button" onclick="eliminarRegistro()">BORRAR</button>
+                    </th>
+                </tr>
+            </thead>
+        </table>
 
         <!-- Tabla para mostrar los registros -->
         <table id="tablaRegistros">
@@ -128,93 +152,140 @@
                     <th>ID</th>
                     <th>PRODUCTO</th>
                     <th>MARCA</th>
-                    <th>PRECIO</th>
                     <th>TIPO</th>
+                    <th>TONO</th>
                     <th>CANTIDAD</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                
+            </tbody>
         </table>
     </div>
 
+    
+
     <script type="module">
+        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
         import { getDatabase, ref, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
+        // Your web app's Firebase configuration
         const firebaseConfig = {
-            apiKey: "TuApiKey",
-            authDomain: "TuDominio.firebaseapp.com",
-            databaseURL: "https://TuProyecto.firebaseio.com",
-            projectId: "TuProyecto",
-            storageBucket: "TuProyecto.appspot.com",
-            messagingSenderId: "TuSenderId",
-            appId: "TuAppId",
-            measurementId: "TuMeasurementId"
+            apiKey: "AIzaSyBFfw2LSZ21xAvjH3TLLfAe0QP0CRGIsu8",
+            authDomain: "proyecto-angeless.firebaseapp.com",
+            databaseURL: "https://proyecto-angeless-default-rtdb.firebaseio.com",
+            projectId: "proyecto-angeless",
+            storageBucket: "proyecto-angeless.appspot.com",
+            messagingSenderId: "283761928202",
+            appId: "1:283761928202:web:7e7df2418c19aa94e1d7f3",
+            measurementId: "G-717M6LB7E6"
         };
 
+        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
 
-        document.getElementById("crud-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            crearRegistro();
-        });
-
-        function crearRegistro() {
-            const producto = document.getElementById("producto").value;
-            const marca = document.getElementById("marca").value;
-            const precio = document.getElementById("precio").value;
-            const tipo = document.getElementById("tipo").value;
-            const cantidad = document.getElementById("cantidad").value;
-
+        window.crearRegistro = function () {
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            const edad = document.getElementById("edad").value;
+            const direccion = document.getElementById("direccion").value;
+            const telefono = document.getElementById("telefono").value;
+            console.log(nombre, apellido, edad, direccion, telefono);
             push(
-                ref(database, 'angelesgarcia'),
+                ref(database, 'brandongordon'),
                 {
-                    producto: producto,
-                    marca: marca,
-                    precio: precio,
-                    tipo: tipo,
-                    cantidad: cantidad
+                    prod: nombre,
+                    marca: apellido,
+                    precio: edad,
+                    tip: direccion,
+                    cantidad: telefono
                 }
             );
         }
 
-        function leerRegistro() {
-            const databaseRef = ref(database, 'angelesgarcia');
+        window.leerRegistro = function () {
+            const databaseRef = ref(database, 'brandongordon');
             const tablaRegistros = document.getElementById('tablaRegistros');
             const tbody = tablaRegistros.querySelector('tbody');
 
             onValue(databaseRef, (snapshot) => {
                 const data = snapshot.val();
 
+                // Limpiar la tabla antes de agregar los nuevos registros
                 tbody.innerHTML = '';
 
+                // Iterar sobre los registros y agregarlos a la tabla
                 for (const registroId in data) {
                     const registro = data[registroId];
                     const newRow = tbody.insertRow();
 
+                    // Crear celdas y agregar datos
                     const idCell = newRow.insertCell(0);
                     idCell.textContent = registroId;
 
-                    const productoCell = newRow.insertCell(1);
-                    productoCell.textContent = registro.producto;
+                    const nombreCell = newRow.insertCell(1);
+                    nombreCell.textContent = registro.name;
 
-                    const marcaCell = newRow.insertCell(2);
-                    marcaCell.textContent = registro.marca;
+                    const apellidoCell = newRow.insertCell(2);
+                    apellidoCell.textContent = registro.lastname;
 
-                    const precioCell = newRow.insertCell(3);
-                    precioCell.textContent = registro.precio;
+                    const edadCell = newRow.insertCell(3);
+                    edadCell.textContent = registro.age;
 
-                    const tipoCell = newRow.insertCell(4);
-                    tipoCell.textContent = registro.tipo;
+                    const direccionCell = newRow.insertCell(4);
+                    direccionCell.textContent = registro.address;
 
-                    const cantidadCell = newRow.insertCell(5);
-                    cantidadCell.textContent = registro.cantidad;
+                    const telefonoCell = newRow.insertCell(5);
+                    telefonoCell.textContent = registro.telephone;
                 }
-
+                // Mostrar la tabla después de leer los registros
                 tablaRegistros.style.display = 'table';
             });
         }
+
+        window.actualizarRegistro = function () {
+            const registroId = document.getElementById("idOpciones").value;
+
+            if (!registroId) {
+                console.log("Por favor, ingresa un ID válido para actualizar el registro.");
+                return;
+            }
+
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            const edad = document.getElementById("edad").value;
+            const direccion = document.getElementById("direccion").value;
+            const telefono = document.getElementById("telefono").value;
+
+            const updates = {
+                name: nombre,
+                lastname: apellido,
+                age: edad,
+                address: direccion,
+                telephone: telefono
+            };
+            update(ref(database, `brandongordon/${registroId}`), updates);
+            console.log("Registro actualizado con éxito.");
+        }
+
+        window.eliminarRegistro = function () {
+            const registroId = document.getElementById("idOpciones").value;
+            if (!registroId) {
+                console.log("Por favor, ingresa un ID válido para eliminar el registro.");
+                return;
+            }
+            remove(ref(database, `brandongordon/${registroId}`));
+            console.log("Registro eliminado con éxito.");
+        }
+
+        // Llamar a leerRegistro después de que el documento HTML se haya cargado completamente
+        document.addEventListener("DOMContentLoaded", function () {
+            leerRegistro();
+        });
     </script>
 </body>
 
