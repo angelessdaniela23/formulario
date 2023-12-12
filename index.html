@@ -97,8 +97,7 @@
         #tabla td {
             border: 1px solid #ddd;
             padding: 8px;
-            text-align: left;
-            width: 100%;
+            text-align: center;
         }
 
         #tabla th {
@@ -196,7 +195,7 @@
             const telefono = document.getElementById("telefono").value;
             console.log(nombre, apellido, edad, direccion, telefono);
             push(
-                ref(database, 'angeles_garcia'),
+                ref(database, 'brandongordon'),
                 {
                     name: nombre,
                     lastname: apellido,
@@ -208,7 +207,7 @@
         }
 
         window.leerRegistro = function () {
-            const databaseRef = ref(database, 'angeles_garcia');
+            const databaseRef = ref(database, 'brandongordon');
             const tablaRegistros = document.getElementById('tablaRegistros');
             const tbody = tablaRegistros.querySelector('tbody');
 
@@ -268,7 +267,7 @@
                 address: direccion,
                 telephone: telefono
             };
-            update(ref(database, `angeles_garcia/${registroId}`), updates);
+            update(ref(database, `brandongordon/${registroId}`), updates);
             console.log("Registro actualizado con éxito.");
         }
 
