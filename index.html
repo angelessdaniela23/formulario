@@ -74,7 +74,6 @@
             margin-top: 20px;
             align-items: center;
             position: relative;
-            
         }
 
         #tablaRegistros th,
@@ -92,7 +91,7 @@
         }
 
         #tabla {
-            width: 100%; 
+            width: 100%; /* Set the width to 100% to make it responsive */
             border-collapse: collapse;
             margin-top: 20px;
             text-align: center;
@@ -117,8 +116,6 @@
             #tabla th, #tabla td {
                 width: 100%; 
                 display: block;
-                align-items: center;
-                position: relative;
             }
         }
     </style>
@@ -165,8 +162,8 @@
 
         <!-- Tabla para mostrar los registros -->
         <table id="tablaRegistros">
-            <thead>
-                <tr>
+            <thead align="center" >
+                <tr align="center" >
                     <th>ID</th>
                     <th>NOMBRES</th>
                     <th>APELLIDOS</th>
