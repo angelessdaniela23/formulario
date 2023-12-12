@@ -64,7 +64,6 @@
 
         button:hover {
             background-color: #000000;
-            align-items: center;
             
         }
 
@@ -198,11 +197,11 @@
             push(
                 ref(database, 'brandongordon'),
                 {
-                    prod: nombre,
-                    marca: apellido,
-                    precio: edad,
-                    tip: direccion,
-                    cantidad: telefono
+                    name: nombre,
+                    lastname: apellido,
+                    age: edad,
+                    address: direccion,
+                    telephone: telefono
                 }
             );
         }
