@@ -195,7 +195,7 @@
             const telefono = document.getElementById("telefono").value;
             console.log(nombre, apellido, edad, direccion, telefono);
             push(
-                ref(database, 'brandongordon'),
+                ref(database, 'angelesgarcia'),
                 {
                     name: nombre,
                     lastname: apellido,
@@ -207,7 +207,7 @@
         }
 
         window.leerRegistro = function () {
-            const databaseRef = ref(database, 'brandongordon');
+            const databaseRef = ref(database, 'angelesgarcia');
             const tablaRegistros = document.getElementById('tablaRegistros');
             const tbody = tablaRegistros.querySelector('tbody');
 
@@ -267,7 +267,7 @@
                 address: direccion,
                 telephone: telefono
             };
-            update(ref(database, `brandongordon/${registroId}`), updates);
+            update(ref(database, `angelesgarcia/${registroId}`), updates);
             console.log("Registro actualizado con éxito.");
         }
 
