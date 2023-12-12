@@ -30,11 +30,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        .tabla{
-            width: 500px; 
-            max-width: 555px;
-            display: block;
-        }
 
         h2 {
             text-align: center;
@@ -77,6 +72,9 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            align-items: center;
+            position: relative;
+            
         }
 
         #tablaRegistros th,
@@ -94,7 +92,7 @@
         }
 
         #tabla {
-            width: 100%; /* Set the width to 100% to make it responsive */
+            width: 100%; 
             border-collapse: collapse;
             margin-top: 20px;
             text-align: center;
@@ -119,6 +117,8 @@
             #tabla th, #tabla td {
                 width: 100%; 
                 display: block;
+                align-items: center;
+                position: relative;
             }
         }
     </style>
@@ -164,7 +164,7 @@
         </table>
 
         <!-- Tabla para mostrar los registros -->
-        <table id="tablaRegistros" class="tabla" align="center">
+        <table id="tablaRegistros">
             <thead>
                 <tr>
                     <th>ID</th>
