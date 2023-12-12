@@ -20,8 +20,8 @@
 
         .contenedor {
             background: rgba(255, 69, 58, 0.5);
-            width: 43%;
-            max-width: 550px;
+            width: 45%;
+            max-width: 555px;
             margin: auto;
             padding: 25px 65px;
             margin-top: 45px;
@@ -188,20 +188,20 @@
         const database = getDatabase(app);
 
         window.crearRegistro = function () {
-            const nombre = document.getElementById("nombre").value;
-            const apellido = document.getElementById("apellido").value;
-            const edad = document.getElementById("edad").value;
-            const direccion = document.getElementById("direccion").value;
-            const telefono = document.getElementById("telefono").value;
-            console.log(nombre, apellido, edad, direccion, telefono);
+            const producto = document.getElementById("producto").value;
+            const marca = document.getElementById("marca").value;
+            const precio = document.getElementById("precio").value;
+            const tipo = document.getElementById("tipo").value;
+            const cantidad = document.getElementById("cantidad").value;
+            console.log(producto, marca, precio, tipo, cantidad);
             push(
                 ref(database, 'brandongordon'),
                 {
-                    name: nombre,
-                    lastname: apellido,
-                    age: edad,
-                    address: direccion,
-                    telephone: telefono
+                    producto: producto,
+                    marca: marca,
+                    precio: precio,
+                    tipo: tipo,
+                    cantidad: cantidad
                 }
             );
         }
