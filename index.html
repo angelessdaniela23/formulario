@@ -195,7 +195,7 @@
             const telefono = document.getElementById("telefono").value;
             console.log(nombre, apellido, edad, direccion, telefono);
             push(
-                ref(database, 'angelesgarcia'),
+                ref(database, 'angeles_garcia'),
                 {
                     name: nombre,
                     lastname: apellido,
@@ -207,7 +207,7 @@
         }
 
         window.leerRegistro = function () {
-            const databaseRef = ref(database, 'angelesgarcia');
+            const databaseRef = ref(database, 'angeles_garcia');
             const tablaRegistros = document.getElementById('tablaRegistros');
             const tbody = tablaRegistros.querySelector('tbody');
 
@@ -267,7 +267,7 @@
                 address: direccion,
                 telephone: telefono
             };
-            update(ref(database, `angelesgarcia/${registroId}`), updates);
+            update(ref(database, `angeles_garcia/${registroId}`), updates);
             console.log("Registro actualizado con éxito.");
         }
 
@@ -277,7 +277,7 @@
                 console.log("Por favor, ingresa un ID válido para eliminar el registro.");
                 return;
             }
-            remove(ref(database, `brandongordon/${registroId}`));
+            remove(ref(database, `angeles_garcia/${registroId}`));
             console.log("Registro eliminado con éxito.");
         }
 
