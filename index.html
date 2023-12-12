@@ -64,7 +64,7 @@
 
         button:hover {
             background-color: #000000;
-            position: center;
+            align-items: center;
             
         }
 
@@ -111,18 +111,18 @@
         <h2>REGISTRO DE PRODUCTOS</h2>
 
         <form id="crud-form">
-            <label for="idOpciones">ID PRODUCTO:</label>
+            <label for="idOpciones">ID</label>
             <input type="text" id="idOpciones" placeholder="ID autogenerado" >
             <label for="nombre">PRODUCTO:</label>
-            <input type="text" id="nombre" placeholder="Ingrese el nombre del producto">
+            <input type="text" id="producto" placeholder="Ingrese el nombre del producto">
             <label for="apellido">MARCA:</label>
-            <input type="text" id="apellido" placeholder="Ingrese la marca">
+            <input type="text" id="marca" placeholder="Ingrese la marca">
             <label for="edad">PRECIO:</label>
-            <input type="number" id="edad" placeholder="Ingrese el precio">
+            <input type="number" id="precio" placeholder="Ingrese el precio">
             <label for="direccion">TIPO:</label>
-            <input type="text" id="direccion" placeholder="Ingrese el tipo">
+            <input type="text" id="tipo" placeholder="Ingrese el tipo">
             <label for="telefono">CANTIDAD:</label>
-            <input type="number" id="telefono" placeholder="Ingrese la cantidad">
+            <input type="number" id="cantidad" placeholder="Ingrese la cantidad">
         </form>
 
         <!-- Tabla para mostrar los registros -->
@@ -189,26 +189,26 @@
         const database = getDatabase(app);
 
         window.crearRegistro = function () {
-            const nombre = document.getElementById("nombre").value;
-            const apellido = document.getElementById("apellido").value;
-            const edad = document.getElementById("edad").value;
-            const direccion = document.getElementById("direccion").value;
-            const telefono = document.getElementById("telefono").value;
-            console.log(nombre, apellido, edad, direccion, telefono);
+            const producto = document.getElementById("producto").value;
+            const marca = document.getElementById("marca").value;
+            const precio = document.getElementById("precio").value;
+            const tipo = document.getElementById("tipo").value;
+            const cantidad = document.getElementById("cantidad").value;
+            console.log(producto, marca, precio, tipo, cantidad);
             push(
-                ref(database, 'angeles_garcia'),
+                ref(database, 'brandongordon'),
                 {
-                    name: nombre,
-                    lastname: apellido,
-                    age: edad,
-                    address: direccion,
-                    telephone: telefono
+                    prod: producto,
+                    marca: marca,
+                    precio: precio,
+                    tip: tipo,
+                    cantidad: cantidad
                 }
             );
         }
 
         window.leerRegistro = function () {
-            const databaseRef = ref(database, 'angeles_garcia');
+            const databaseRef = ref(database, 'brandongordon');
             const tablaRegistros = document.getElementById('tablaRegistros');
             const tbody = tablaRegistros.querySelector('tbody');
 
