@@ -112,8 +112,8 @@
         <form id="crud-form">
             <label for="idOpciones">ID PRODUCTO:</label>
             <input type="text" id="idOpciones" placeholder="ID autogenerado" >
-            <label for="producto">PRODUCTO:</label>
-            <input type="text" id="producto" placeholder="Ingrese el nombre del producto">
+            <label for="nombre">PRODUCTO:</label>
+            <input type="text" id="nombre" placeholder="Ingrese el nombre del producto">
             <label for="apellido">MARCA:</label>
             <input type="text" id="apellido" placeholder="Ingrese la marca">
             <label for="edad">PRECIO:</label>
@@ -188,16 +188,16 @@
         const database = getDatabase(app);
 
         window.crearRegistro = function () {
-            const producto = document.getElementById("producto").value;
+            const nombre = document.getElementById("nombre").value;
             const apellido = document.getElementById("apellido").value;
             const edad = document.getElementById("edad").value;
             const direccion = document.getElementById("direccion").value;
             const telefono = document.getElementById("telefono").value;
-            console.log(producto, apellido, edad, direccion, telefono);
+            console.log(nombre, apellido, edad, direccion, telefono);
             push(
                 ref(database, 'brandongordon'),
                 {
-                    product: producto,
+                    name: nombre,
                     lastname: apellido,
                     age: edad,
                     address: direccion,
