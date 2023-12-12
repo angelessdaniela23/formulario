@@ -20,7 +20,7 @@
 
         .contenedor {
             background: rgba(255, 69, 58, 0.5);
-            width: 40%;
+            width: 43%;
             max-width: 550px;
             margin: auto;
             padding: 25px 65px;
@@ -28,6 +28,14 @@
             padding-bottom: 20px;
             border-radius: 3px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .contenedor .form-label{
+            display: block;
+            color:#07b9ff ;
+            font-size: 28px;
+            font-family: sans-serif;
+            position: relative;
         }
 
         h2 {
@@ -109,7 +117,7 @@
     <div class="contenedor">
         <h2>REGISTRO DE PRODUCTOS</h2>
 
-        <form id="crud-form">
+        <form id="crud-form" class="form-label">
             <label for="idOpciones">ID PRODUCTO:</label>
             <input type="text" id="idOpciones" placeholder="ID autogenerado">
             <label for="nombre">PRODUCTO:</label>
